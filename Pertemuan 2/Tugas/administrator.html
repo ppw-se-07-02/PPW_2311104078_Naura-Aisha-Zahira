@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout Halaman Administrator</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            display: grid;
+            grid-template-rows: auto 1fr auto;
+            height: 100vh;
+            border: 1px solid black;
+        }
+
+        header, footer {
+            background-color: #e6e6e6;
+            text-align: center;
+            padding: 10px;
+            font-weight: bold;
+        }
+
+        .content {
+            display: grid;
+            grid-template-columns: 1fr 3fr;
+        }
+
+        .menu {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-right: 1px solid black;
+        }
+
+        .menu p {
+            margin: 10px 0;
+            font-weight: bold;
+        }
+
+        .main {
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>Header</header>
+
+        <div class="content">
+            <div class="menu">
+                <p>Menu:</p>
+                <p>Data User</p>
+                <p>Kelola Produk</p>
+                <p>Edit Password</p>
+                <p>Logout</p>
+            </div>
+
+            <div class="main">
+                Konten Dinamis
+            </div>
+        </div>
+
+        <footer>Footer</footer>
+    </div>
+</body>
+</html>
