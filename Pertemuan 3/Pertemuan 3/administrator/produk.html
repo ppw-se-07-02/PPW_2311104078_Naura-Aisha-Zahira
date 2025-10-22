@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Produk - Admin Panel</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; }
+        #header { background-color: aqua; height: 100px; text-align: center; color: blueviolet; font-size: 28px; line-height: 100px; }
+        #l-side { background-color: rgb(10, 204, 204); min-height: 350px; width: 20%; text-align: center; color: white; float: left; padding-top: 10px; }
+        #r-side { background-color: rgb(240, 255, 255); min-height: 350px; width: 80%; text-align: center; color: black; float: left; }
+        #footer { background-color: rgb(140, 218, 140); height: 40px; width: 100%; text-align: center; color: white; float: left; line-height: 40px; }
+        a { display: block; color: white; text-decoration: none; margin: 10px 0; }
+        a:hover { text-decoration: underline; }
+        table { margin: auto; border-collapse: collapse; width: 80%; margin-top: 20px; }
+        th, td { border: 1px solid #555; padding: 8px; }
+        th { background-color: aquamarine; }
+    </style>
+</head>
+<body>
+    <div id="header">Kelola Produk</div>
+
+    <div id="l-side">
+        <h3>Menu Admin</h3>
+        <a href="beranda.html">Beranda</a>
+        <a href="datauser.html">Data User</a>
+        <a href="produk.html">Produk</a>
+        <a href="password.html">Password</a>
+    </div>
+
+    <div id="r-side">
+        <h2>Daftar Produk</h2>
+        <table>
+            <tr><th>ID</th><th>Nama Produk</th><th>Harga</th><th>Stok</th></tr>
+            <tr><td>001</td><td>Kaos Oversize</td><td>Rp 120.000</td><td>25</td></tr>
+            <tr><td>002</td><td>Tas Selempang</td><td>Rp 90.000</td><td>40</td></tr>
+        </table>
+    </div>
+
+    <div id="footer"></div>
+</body>
+</html>

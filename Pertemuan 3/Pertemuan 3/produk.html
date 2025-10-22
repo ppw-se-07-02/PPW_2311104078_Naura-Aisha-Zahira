@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Produk - Online Shop</title>
+    <style>
+        #header {
+            background-color: aqua;
+            height: 100px;
+            text-align: center;
+            color: blueviolet;
+        }
+        #menu {
+            background-color: aquamarine;
+            height: 40px;
+            text-align: center;
+            color: azure;
+        }
+        #menu a {
+            margin: 10px;
+            text-decoration: none;
+            color: darkblue;
+            font-weight: bold;
+        }
+        #l-side {
+            background-color:rgb(10, 204, 204);
+            min-height: 300px;
+            width: 20%;
+            text-align:center;
+            color: #ffffff;
+            float: left;
+        }
+        #r-side {
+            background-color:rgb(255, 234, 185);
+            min-height: 300px;
+            width: 80%;
+            text-align:center;
+            color: black;
+            float: left;
+        }
+        #footer {
+            background-color:rgb(140, 218, 140);
+            height: 40px;
+            width: 100%;
+            text-align:center;
+            color: #ffffff;
+            float: left;
+        }
+        .produk-card {
+            display: inline-block;
+            background-color: white;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            width: 200px;
+            margin: 10px;
+            padding: 10px;
+        }
+        .produk-card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="header">Halaman Produk</div>
+        <div id="menu">
+            <a href="beranda.html">Beranda</a>
+            <a href="produk.html">Produk</a>
+            <a href="member.html">Member</a>
+            <a href="registrasi.html">Registrasi</a>
+        </div>
+        <div id="l-side">Kategori Produk</div>
+        <div id="r-side">
+            <div class="produk-card">
+                <img src="assets/image/produk1.jpg" alt="Produk 1">
+                <h4>Kaos Oversize</h4>
+                <p>Rp 120.000</p>
+                <button>Beli Sekarang</button>
+            </div>
+
+            <div class="produk-card">
+                <img src="assets/image/produk2.jpg" alt="Produk 2">
+                <h4>Tas Selempang</h4>
+                <p>Rp 90.000</p>
+                <button>Beli Sekarang</button>
+            </div>
+
+            <div class="produk-card">
+                <img src="assets/image/produk3.jpg" alt="Produk 3">
+                <h4>Sepatu Sneakers</h4>
+                <p>Rp 250.000</p>
+                <button>Beli Sekarang</button>
+            </div>
+        </div>
+        <div id="footer">Footer</div>
+    </div>
+</body>
+</html>

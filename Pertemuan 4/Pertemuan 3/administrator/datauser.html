@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Data User - Admin Panel</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; }
+        #header { background-color: aqua; height: 100px; text-align: center; color: blueviolet; font-size: 28px; line-height: 100px; }
+        #l-side { background-color: rgb(10, 204, 204); min-height: 350px; width: 20%; text-align: center; color: white; float: left; padding-top: 10px; }
+        #r-side { background-color: rgb(240, 255, 255); min-height: 350px; width: 80%; text-align: center; color: black; float: left; }
+        #footer { background-color: rgb(140, 218, 140); height: 40px; width: 100%; text-align: center; color: white; float: left; line-height: 40px; }
+        a { display: block; color: white; text-decoration: none; margin: 10px 0; }
+        a:hover { text-decoration: underline; }
+        table { margin: auto; border-collapse: collapse; width: 80%; margin-top: 20px; }
+        th, td { border: 1px solid #555; padding: 8px; }
+        th { background-color: aquamarine; }
+    </style>
+</head>
+<body>
+    <div id="header">Data User</div>
+
+    <div id="l-side">
+        <h3>Menu Admin</h3>
+        <a href="beranda.html">Beranda</a>
+        <a href="datauser.html">Data User</a>
+        <a href="produk.html">Produk</a>
+        <a href="password.html">Password</a>
+    </div>
+
+    <div id="r-side">
+        <h2>Daftar User</h2>
+        <table>
+            <tr><th>No</th><th>Nama</th><th>Email</th><th>Status</th></tr>
+            <tr><td>1</td><td>Naura</td><td>naura@shop.com</td><td>Aktif</td></tr>
+            <tr><td>2</td><td>Aisha</td><td>aisha@shop.com</td><td>Aktif</td></tr>
+        </table>
+    </div>
+
+    <div id="footer"></div>
+</body>
+</html>

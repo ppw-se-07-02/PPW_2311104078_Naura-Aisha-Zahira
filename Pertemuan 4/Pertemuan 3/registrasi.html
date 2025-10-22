@@ -1,0 +1,103 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <title> Online shop </title>
+        <style> 
+            #header {
+                background-color: aqua;
+                height: 100px;
+                text-align: center;
+                color: blueviolet;
+            }
+            #menu {
+                background-color: aquamarine;
+                height: 40px;
+                text-align: center;
+                color: azure;
+            }
+            #l-side {
+                background-color:rgb(10, 204, 204);
+                min-height: 300px;
+                height: 40px;
+                width: 20%;
+                text-align:center;
+                color: #ffffff;
+                float: left;
+            }
+            #r-side{
+                background-color:rgb(80, 228, 167);
+                min-height: 300px;
+                width: 80%;
+                text-align:center;
+                color: #ffffff;
+                float: left;
+            }
+            #footer{
+                background-color:rgb(140, 218, 140);
+                height: 40px;
+                width: 100%;
+                text-align:center;
+                color: #ffffff;
+                float: left;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="container">
+            <div id="header"> Header </div>
+            <div id="menu">
+                <a href="beranda.html">Beranda</a>
+                <a href="produk.html">Produk</a>
+                <a href="member.html">Member</a>
+                <a href="registrasi.html">Registrasi</a>
+            </div>
+            <div id="l-side">Image Slider</div>
+            <div id="r-side">
+                <h3>Halaman Registrasi</h3>
+                <table>
+                    <tr>
+                        <td>Nama Lengkap</td><td>:</td>
+                        <td><input type="text" name="fullname"></td>
+                    </tr>
+                    <tr>
+                        <td>NIK</td><td>:</td>
+                        <td><input type="text" name="nik"></td>
+                    </tr>
+                    <tr>
+                        <td>Alamat</td><td>:</td>
+                        <td><input type="text" name="alamat"></td>
+                    </tr>
+                    <tr>
+                        <td>TTL</td><td>:</td>
+                        <td><input type="text" name="tempat"> 
+                        <input type="date" name="tanggal lahir"> </td>
+                    </tr>
+                    <tr>
+                        <td>Handphone</td><td>:</td>
+                        <td><input type="text" name="hp"></td>
+                    </tr>
+                    <tr>
+                        <td>Jenis Kelamin</td><td>:</td>
+                        <td>
+                            <input type="radio" name="gender" value="pria">Pria
+                            <input type="radio" name="gender" value="wanita">Wanita
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Agama</td><td>:</td> 
+                        <td><select name="agama">
+                            <option value="Islam">Islam</option>
+                            <option value="Kristen">Kristen</option>
+                            <option value="Katholik">Katholik</option>
+                            <option value="Konghuchu">Konghuchu</option>
+                            <option value="Hindu">Hindu</option>
+                            <option value="Budha">Budha</option>
+                        </select>
+                        </td>
+                   </tr>
+                </table>
+            </div>
+            <div id="footer">Footer</div>
+        </div>
+    </body>
+    </html>

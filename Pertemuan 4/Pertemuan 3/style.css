@@ -1,0 +1,226 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff8fa;
+    color: #333;
+}
+
+/* Header */
+#header {
+    background-color: #e60023;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 26px;
+    letter-spacing: 1px;
+}
+
+/* Menu */
+#menu {
+    background-color: #ffd6e0;
+    text-align: center;
+    padding: 12px 0;
+}
+
+#menu a {
+    color: #e60023;
+    text-decoration: none;
+    margin: 0 18px;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+#menu a:hover {
+    color: #b8001f;
+}
+
+/* Banner Slider */
+#banner {
+    position: relative;
+    height: 300px;
+    overflow: hidden;
+}
+
+#banner .slides {
+    position: relative;
+    height: 100%;
+}
+
+#banner .slides img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* agar tidak ngezoom */
+    top: 0;
+    left: 0;
+    transition: opacity 0.8s ease-in-out;
+    opacity: 0;
+}
+
+#banner h2 {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    background-color: rgba(230, 0, 35, 0.85);
+    padding: 8px 20px;
+    border-radius: 8px;
+    font-size: 26px;
+    font-weight: 700;
+}
+
+/* Tombol panah slider */
+#banner button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.7);
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 6px 12px;
+    border-radius: 50%;
+    transition: background 0.3s;
+    color: #e60023;
+}
+
+#banner button:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+/* Konten */
+#content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 30px 50px;
+    gap: 25px;
+}
+
+/* Produk */
+#produk {
+    flex: 3;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.produk-item {
+    border: 1px solid #eee;
+    padding: 15px;
+    background-color: white;
+    text-align: center;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.produk-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.produk-item img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.produk-item p {
+    font-weight: 600;
+    color: #333;
+    margin-top: 10px;
+}
+
+.produk-item span {
+    color: #e60023;
+    font-weight: bold;
+}
+
+/* Rekomendasi */
+#rekomendasi {
+    flex: 1;
+    background-color: #fff0f3;
+    text-align: center;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+#rekomendasi h3 {
+    color: #e60023;
+    margin-bottom: 15px;
+}
+
+#rekomendasi img {
+    width: 90%;
+    border-radius: 10px;
+}
+
+/* Footer */
+#footer {
+    background-color: #e60023;
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    color: white;
+    text-align: center;
+    flex-wrap: wrap;
+}
+
+.footer-col {
+    width: 30%;
+    min-width: 200px;
+}
+
+.footer-col h4 {
+    margin-bottom: 10px;
+    color: #ffd6e0;
+}
+
+/* Responsif */
+@media (max-width: 900px) {
+    #content {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    #rekomendasi {
+        order: -1;
+        margin-bottom: 20px;
+    }
+
+    #banner {
+        height: 230px;
+    }
+
+    #banner h2 {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    #menu a {
+        margin: 0 10px;
+        font-size: 14px;
+    }
+
+    #banner {
+        height: 200px;
+    }
+
+    .produk-item img {
+        height: 150px;
+    }
+
+    #content {
+        padding: 15px;
+    }
+}
+ 

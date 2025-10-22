@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toko Online Popmart</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="container">
+
+        <!-- HEADER -->
+        <header id="header">
+            <h1>Popmart Online Store</h1>
+        </header>
+
+        <!-- MENU -->
+        <nav id="menu">
+            <a href="beranda.html">Beranda</a>
+            <a href="produk.html">Produk</a>
+            <a href="member.html">Member</a>
+            <a href="registrasi.html">Login</a>
+        </nav>
+
+        <!-- BANNER SLIDER -->
+        <section id="banner">
+            <button class="prev">&#10094;</button>
+            <div class="slides">
+                <img src="assets/image/banner-popmart.png" alt="Banner 1">
+                <img src="assets/image/banner-popmart2.jpg" alt="Banner 2">
+                <img src="assets/image/banner-popmart3.png" alt="Banner 3">
+            </div>
+            <button class="next">&#10095;</button>
+            <!-- <h2>Popmart Collection</h2> -->
+        </section>
+
+        <!-- KONTEN -->
+        <main id="content">
+            <section id="produk">
+                <div class="produk-item">
+                    <img src="assets/image/popmart1.webp" alt="Popmart Figur 1">
+                    <p>Popmart Sweet Bean</p>
+                    <span>Rp 120.000</span>
+                </div>
+                <div class="produk-item">
+                    <img src="assets/image/popmart2.jpg" alt="Popmart Figur 2">
+                    <p>Popmart Mega Space Molly</p>
+                    <span>Rp 135.000</span>
+                </div>
+                <div class="produk-item">
+                    <img src="assets/image/popmart3.jpg" alt="Popmart Figur 3">
+                    <p>Popmart Dimoo Retro Magician and Angel</p>
+                    <span>Rp 150.000</span>
+                </div>
+                <div class="produk-item">
+                    <img src="assets/image/popmart4.jpg" alt="Popmart Figur 4">
+                    <p>Popmart Pucky Forest</p>
+                    <span>Rp 145.000</span>
+                </div>
+                <div class="produk-item">
+                    <img src="assets/image/popmart5.jpg" alt="Popmart Figur 5">
+                    <p>Popmart Skull Panda</p>
+                    <span>Rp 160.000</span>
+                </div>
+                <div class="produk-item">
+                    <img src="assets/image/popmart6.jfif" alt="Popmart Figur 6">
+                    <p>Popmart Hirono</p>
+                    <span>Rp 155.000</span>
+                </div>
+            </section>
+
+            <aside id="rekomendasi">
+                <h3>Rekomendasi</h3>
+                <img src="assets/image/popmart7.jpg" alt="Popmart Rekomendasi">
+                <p><b>Popmart Molly Steampunk</b></p>
+                <span>Rp 165.000</span>
+            </aside>
+        </main>
+
+        <!-- FOOTER -->
+        <footer id="footer">
+            <div class="footer-col">
+                <h4>QUESTIONS</h4>
+                <p>Hubungi kami untuk bantuan dan informasi lebih lanjut.</p>
+            </div>
+            <div class="footer-col">
+                <h4>CATEGORIES</h4>
+                <p>Popmart • Figur Koleksi • Mainan Mini</p>
+            </div>
+            <div class="footer-col">
+                <h4>FOLLOW US</h4>
+                <p>@popmart.id</p>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- SLIDER SCRIPT -->
+    <script>
+        let slideIndex = 0;
+        const slides = document.querySelectorAll('#banner .slides img');
+        const prev = document.querySelector('.prev');
+        const next = document.querySelector('.next');
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.style.opacity = i === index ? '1' : '0';
+            });
+        }
+
+        function nextSlide() {
+            slideIndex = (slideIndex + 1) % slides.length;
+            showSlide(slideIndex);
+        }
+
+        function prevSlide() {
+            slideIndex = (slideIndex - 1 + slides.length) % slides.length;
+            showSlide(slideIndex);
+        }
+
+        next.addEventListener('click', nextSlide);
+        prev.addEventListener('click', prevSlide);
+
+        // Auto slide
+        setInterval(nextSlide, 4000);
+        showSlide(slideIndex);
+    </script>
+</body>
+</html>
