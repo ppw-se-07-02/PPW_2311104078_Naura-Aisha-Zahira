@@ -1,0 +1,125 @@
+/* Import Google Fonts */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #fdfafb; /* Warna latar belakang pink sangat muda */
+}
+
+/* Variabel Warna Tema Makeup */
+:root {
+    --brand-primary: #D95388; /* Pink tua */
+    --brand-secondary: #FFB6C1; /* Pink muda */
+    --brand-dark: #333;
+    --brand-light: #fdfafb;
+}
+
+/* == NAVBAR == */
+.logo-font {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 1.8rem;
+    color: var(--brand-primary);
+}
+
+.navbar {
+    transition: all 0.3s ease;
+}
+
+/* == HEADER / CAROUSEL == */
+.carousel-item {
+    background-size: cover;
+    background-position: center center;
+}
+.carousel-caption {
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    padding: 1.5rem;
+}
+
+/* == TOMBOL KUSTOM == */
+.btn-brand {
+    background-color: var(--brand-primary);
+    border-color: var(--brand-primary);
+    color: #fff;
+    transition: all 0.3s ease;
+}
+.btn-brand:hover {
+    background-color: #c24275;
+    border-color: #c24275;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.btn-outline-brand {
+    color: var(--brand-primary);
+    border-color: var(--brand-primary);
+    transition: all 0.3s ease;
+}
+.btn-outline-brand:hover {
+    background-color: var(--brand-primary);
+    color: #fff;
+}
+
+/* == JUDUL BAGIAN (UNTUK LAYOUT BARU) == */
+/* Judul Sidebar (Rekomendasi) */
+.section-title-sidebar {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    color: var(--brand-dark);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid var(--brand-primary);
+    padding-bottom: 0.5rem;
+}
+
+/* Judul Konten Utama (Daftar Barang) */
+.section-title-main {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    color: var(--brand-dark);
+    margin-bottom: 2rem;
+    position: relative;
+    text-align: left; /* Dibuat rata kiri */
+}
+.section-title-main::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: var(--brand-primary);
+    margin-top: 10px;
+    margin-left: 0; /* Dibuat rata kiri */
+}
+
+
+/* == CARD PRODUK == */
+.product-card {
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(217, 83, 136, 0.2) !important;
+}
+.product-card .card-body {
+    text-align: center;
+}
+
+/* == HALAMAN DETAIL == */
+.product-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+}
+.price {
+    color: var(--brand-primary);
+    font-weight: 600;
+}
+.product-meta i {
+    color: var(--brand-primary);
+    margin-right: 8px;
+}
+
+/* == FOOTER == */
+footer {
+    background-color: #333;
+}

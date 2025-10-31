@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRAKTIKUM JS DAN JQUERY</title>
+</head>
+
+<body>
+    <!-- <p id="outputTipeData"></p>
+    <p id="test"></p> -->
+
+    <!-- <h1>Array pada javaScript</h1>
+    <p id="array"></p>
+
+    <h2>Metode pada Array</h2>
+    <p id="array2"></p> -->
+
+    <!-- <h1>Percobaan IF...ELSE... IF...ELSE</h1>
+    <p id="outputPercabangan"></p> -->
+
+    <h1>javaScript Object</h1>
+    <div id="outputObject"></div>
+    <p id="outputObject2"></p>
+
+
+    <script>
+        // // // Deklarasi berbagai tipe data dasar 
+        // var angka = 20; // Number 
+        // var teks = "Aulia Jasifa"; // String 
+        // var benar = true; // Boolean 
+        // var salah = false; // Boolean 
+        // var kosong = null; // Null 
+        // var tidakDidefinisikan; // Undefined 
+        // var daftar = ["apel", "pisang", "mangga"]; // Array 
+        // var tanggal = new Date(); // Date (objek tanggal) 
+        // var pola = /[A-Z]/; // RegExp (regular expression) 
+        // var orang = { nama: "Jasifa", umur: 20 }; // Object 
+
+        // // // Gabungkan hasil ke satu variabel string 
+        // var hasil = "";
+        // hasil += "<b>Number:</b> " + angka + "<br>";
+        // hasil += "<b>String:</b> " + teks + "<br>";
+        // hasil += "<b>Boolean 1:</b> " + benar + "<br>";
+        // hasil += "<b>Boolean 0:</b> " + salah + "<br>";
+        // hasil += "<b>Null:</b> " + kosong + "<br>";
+        // hasil += "<b>Undefined:</b> " + tidakDidefinisikan + "<br>";
+        // hasil += "<b>Array:</b> " + daftar.join(", ") + "<br>";
+        // hasil += "<b>Date:</b> " + tanggal + "<br>";
+        // hasil += "<b>RegExp:</b> " + pola + ", Ini Sirsak = " + pola.test("Sirsak") + "<br>";
+        // hasil += "<b>Object:</b> nama = " + orang.nama + ", umur = " + orang.umur + "<br>";
+
+        // // // Tampilkan hasil di halaman 
+        // document.getElementById("outputTipeData").innerHTML = hasil;
+
+
+        // var nama = "Aulia";
+        // var umur = 20;
+        // var isMahasiswa = true;
+
+        // document.getElementById("test").innerHTML =
+        //     "Nama: " + nama + "<br>" +
+        //     "Umur: " + umur + "<br>" +
+        //     "Mahasiswa: " + isMahasiswa;
+
+
+        // var nama = "Aulia";
+        // window.alert("Hello, " + nama);
+
+
+        // var data = ["Satu", 2, true, "Tiga", 4]; // Array dengan tipe data campuran 
+        // var arr2 = [["satu", "dua"], ["tiga", "empat"]]; // Array 2D 
+        // document.getElementById("array").innerHTML =
+        //     "Elemen pertama: " + data[0] + "<br>" +
+        //     "Elemen ketiga: " + data[2] + "<br>" +
+        //     "Isi arr2: " + arr2 + "<br>" +
+        //     "Elemen arr2[0][1]: " + arr2[0][1] + "<br>" + //elemen pada baris 0, kolom 1 
+        //     data[10]; // mengembalikan undefined 
+
+
+        // var data2 = ["pisang", "apel", "mangga"];
+        // // Menampilkan hasil ke HTML 
+        // document.getElementById("array2").innerHTML =
+        //     "Isi awal array: " + data2 + "<br>" +
+        //     "Panjang awal array: " + data2.length + "<br><br>" +
+        //     // Menambahkan elemen baru 
+        //     "Menambahkan durian (push): " + data2.push("durian") + "<br>" + //mengembalikan panjang baru array 
+        //     "Isi array setelah push: " + data2 + "<br>" +
+        //     // Menghapus elemen terakhir 
+        //     "Menghapus elemen terakhir (pop): " + data2.pop() + "<br>" + // mengembalikan elemen yang dihapus
+        //     "Isi array setelah pop: " + data2 + "<br>";
+
+        // var pendidikan = "S2";
+        // var gelar;
+        // if (pendidikan === "S1") {
+        //     gelar = "Sarjana";
+        // } else if (pendidikan === "S2") {
+        //     gelar = "Master";
+        // } else if (pendidikan === "S3") {
+        //     gelar = "Doktor";
+        // } else {
+        //     gelar = "Tidak diketahui";
+        // }
+
+        // document.getElementById("outputPercabangan").innerHTML =
+        //     "Sekarang kamu: " + pendidikan + ", gelar kamu: " + gelar;
+
+        // var nilai = 89;
+        // var predikat;
+
+        // if (nilai >= 90) {
+        //     predikat = "A (Sangat Baik)";
+        // } else if (nilai >= 80) {
+        //     predikat = "B (Baik)";
+        // } else if (nilai >= 70) {
+        //     predikat = "C (Cukup)";
+        // } else if (nilai >= 60) {
+        //     predikat = "D (Kurang)";
+        // } else {
+        //     predikat = "E (Sangat Kurang)";
+        // }
+
+        // document.getElementById("outputPercabangan").innerHTML =
+        //     "Nilai kamu: " + nilai + ", Predikat: " + predikat;
+
+        // var text1 = "";
+        // var i = 0;
+        // while (i < 3) {
+        //     text1 += "Perulangan while ke-" + i + "<br>"; // Tambah teks dengan nomor 
+        //     perulangan
+        //     i++; // Increment i by 1 
+        // }
+        // document.getElementById("whileLoop").innerHTML = text1;
+
+        var objek_kosong = {};
+        var mobil = {
+            "warna-badan": "merah", // properti dengan nama mengandung tanda hubung 
+            "nomor-polisi": "BK1234AB",
+            merk: "Toyota", // properti dengan nama biasa 
+            tahun: 2020
+        };
+
+        // Nested Object 
+        var jadwal = {
+            platform: 34,
+            telah_berangkat: false,
+            asal: {
+                kode_kota: "MDN",
+                nama_kota: "Medan",
+                waktu: "2023-12-29 14:00"
+            },
+            tujuan: {
+                kode_kota: "JKT",
+                nama_kota: "Jakarta",
+                waktu: "2023-12-29 17:30"
+            }
+        };
+        
+        mobil.jumlahBan = 4; 
+        jadwal.asal.stasiun = "Medan Stasiun";
+
+        document.getElementById("outputObject").innerHTML =
+            "Warna Mobil: " + mobil["warna-badan"] + "<br>" +
+            "Nomor Polisi: " + mobil["nomor-polisi"] + "<br>" +
+            "Merk: " + mobil.merk + "<br>" +
+            "Tahun: " + mobil.tahun + "<br>" +
+            "Asal: " + jadwal.asal.nama_kota + "<br>" +
+            "Tujuan: " + jadwal.tujuan.nama_kota + "<br>" +
+            "Jumlah Ban:" + mobil.jumlahBan + "<br>" +
+            "Stasiun Asal:" + jadwal.asal.stasiun;
+
+        var truk = Object.create(mobil);
+        truk.merk = "Suzuki";
+        truk["ukuran truk"] = "besar";
+
+        document.getElementById("outputObject2").innerHTML =
+        "Truk Merk: " + truk.JumlahBan + "<br>" +
+        "Merk truk: " + truk.merk + "<br>" +
+        "Ukuran truk: " + truk["ukursn truk"] ;
+         
+    </script>
+
+</body>
+
+</html>

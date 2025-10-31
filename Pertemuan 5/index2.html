@@ -1,0 +1,29 @@
+<html>
+<head>
+    <title>The jQuery Example</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // var hobi = ["Membaca", "Bersepeda", "Bermain Musik"];
+            // $("#hasil").text(" Hobi faforit: " + hobi[1]);
+            
+            // var a = 10;
+            // var b = 5;
+            // var hasil = a + b;
+            // $("#output").html("Hasil penjumlahan " + hasil);
+
+            var nilai = 75;
+            if (nilai >= 70){
+                $("#hasil").text("Selamat, Anda Lulus!");
+                $("#hasil").css("color", "green");
+            }
+            else {
+                $("#hasil").text("Maaf, Anda Tidak Llulus.");
+                $("#hasil").css("color", "red");
+            }
+    });
+    </script>
+</head>
+<body>
+    <!-- <div id="output"></div> --> 
+</body>

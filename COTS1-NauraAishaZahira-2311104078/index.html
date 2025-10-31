@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GlamourGlade - Beranda Toko Makeup</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand logo-font" href="index.html">GlamourGlade</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Beranda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#produk">Produk</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="container-fluid p-0">
+        <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active" style="background-image: url('assets/img/banner-1.webp'); height: 60vh;">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>New Luminous Lipstick</h5>
+                        <p>Dapatkan kilau bibir sempurna dengan koleksi terbaru kami.</p>
+                    </div>
+                </div>
+                <div class="carousel-item" style="background-image: url('assets/img/banner-2.webp'); height: 60vh;">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Skincare Sale 50% OFF</h5>
+                        <p>Rawat kulitmu dengan produk terbaik, harga hemat.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container my-5">
+        <div class="row">
+            
+            <aside class="col-md-3">
+                <h3 class="section-title-sidebar">Rekomendasi</h3>
+                <div class="list-group shadow-sm">
+                    <a href="detail.html" class="list-group-item list-group-item-action">
+                        <strong>Velvet Lipstick</strong>
+                        <br><small class="text-muted">Rp 150.000</small>
+                    </a>
+                    <a href="detail.html" class="list-group-item list-group-item-action">
+                        <strong>Glowing Foundation</strong>
+                        <br><small class="text-muted">Rp 250.000</small>
+                    </a>
+                    <a href="detail.html" class="list-group-item list-group-item-action">
+                        <strong>Eyeshadow Palette "Sunrise"</strong>
+                        <br><small class="text-muted">Rp 320.000</small>
+                    </a>
+                </div>
+            </aside>
+
+            <div class="col-md-9">
+                
+                <section class="mb-4">
+                    <form>
+                        <div class="input-group input-group-lg shadow-sm">
+                            <input type="text" id="searchInput" class="form-control" placeholder="Cari produk makeup favoritmu...">
+                            <button class="btn btn-brand" type="button">Cari</button>
+                        </div>
+                    </form>
+                </section>
+
+                <section id="produk">
+                    <h2 class="section-title-main">Daftar Barang</h2>
+                    <div id="productGrid" class="row g-4">
+                        
+                        <div class="col-lg-4 col-md-6 product-card-wrapper">
+                            <div class="card product-card h-100 shadow-sm border-0">
+                                <img src="assets/img/produk-lipstick.webp" class="card-img-top" alt="Velvet Lipstick">
+                                <div class="card-body">
+                                    <h5 class="card-title">Velvet Lipstick</h5>
+                                    <p class="card-text text-muted">Rp 150.000</p>
+                                    <a href="detail.html?product=1" class="btn btn-outline-brand">Lihat Detail</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 product-card-wrapper">
+                            <div class="card product-card h-100 shadow-sm border-0">
+                                <img src="assets/img/produk-foundation.jpg" class="card-img-top" alt="Glowing Foundation">
+                                <div class="card-body">
+                                    <h5 class="card-title">Glowing Foundation</h5>
+                                    <p class="card-text text-muted">Rp 250.000</p>
+                                    <a href="detail.html?product=2" class="btn btn-outline-brand">Lihat Detail</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 product-card-wrapper">
+                            <div class="card product-card h-100 shadow-sm border-0">
+                                <img src="assets/img/produk-eyeshadow.jpg" class="card-img-top" alt="Eyeshadow Palette">
+                                <div class="card-body">
+                                    <h5 class="card-title">Eyeshadow Palette "Sunrise"</h5>
+                                    <p class="card-text text-muted">Rp 320.000</p>
+                                    <a href="detail.html?product=3" class="btn btn-outline-brand">Lihat Detail</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 product-card-wrapper">
+                            <div class="card product-card h-100 shadow-sm border-0">
+                                <img src="assets/img/produk-blushon.jpg" class="card-img-top" alt="Matte Blush On">
+                                <div class="card-body">
+                                    <h5 class="card-title">Matte Blush On</h5>
+                                    <p class="card-text text-muted">Rp 120.000</p>
+                                    <a href="detail.html?product=4" class="btn btn-outline-brand">Lihat Detail</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 product-card-wrapper">
+                            <div class="card product-card h-100 shadow-sm border-0">
+                                <img src="assets/img/produk-mascara.jpg" class="card-img-top" alt="Waterproof Mascara">
+                                <div class="card-body">
+                                    <h5 class="card-title">Waterproof Mascara</h5>
+                                    <p class="card-text text-muted">Rp 180.000</p>
+                                    <a href="detail.html?product=5" class="btn btn-outline-brand">Lihat Detail</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-lg-4 col-md-6 product-card-wrapper">
+                            <div class="card product-card h-100 shadow-sm border-0">
+                                <img src="assets/img/produk-serum.avif" class="card-img-top" alt="Hydrating Serum">
+                                <div class="card-body">
+                                    <h5 class="card-title">Hydrating Serum</h5>
+                                    <p class="card-text text-muted">Rp 275.000</p>
+                                    <a href="detail.html?product=6" class="btn btn-outline-brand">Lihat Detail</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-dark text-white text-center p-4 mt-5">
+        <div class="container">
+            <p class="mb-0">GlamourGlade &copy; 2025 by Naura Aisha Zahira - 2311104078</p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
