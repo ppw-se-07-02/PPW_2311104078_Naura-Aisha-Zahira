@@ -1,0 +1,580 @@
+/* ========== PRESENSI PAGE STYLING ========== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #5dbd8f, #83d1a7);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* ========== SIDEBAR ========== */
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 70px;
+    height: 100vh;
+    background: linear-gradient(180deg, #2eaf7d, #83d1a7);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    z-index: 1000;
+    transition: width 0.3s ease;
+}
+
+.sidebar:hover {
+    width: 220px;
+}
+
+.logo-section {
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+    overflow: hidden;
+    padding: 8px;
+}
+
+.sidebar-logo {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.nav-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    padding: 0 12px;
+}
+
+.nav-item {
+    width: 46px;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    font-size: 20px;
+    padding: 0 12px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.sidebar:hover .nav-item {
+    width: 196px;
+    justify-content: flex-start;
+}
+
+.nav-text {
+    font-size: 14px;
+    font-weight: 500;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.sidebar:hover .nav-text {
+    opacity: 1;
+}
+
+.nav-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+.nav-item.active {
+    background: white;
+    color: #2eaf7d;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* ========== MAIN CONTENT ========== */
+.main-content {
+    margin-left: 70px;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* ========== HEADER ========== */
+.presensi-header {
+    background: white;
+    border-radius: 16px;
+    padding: 20px 24px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.btn-back {
+    background: #f0f0f0;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-back:hover {
+    background: #e0e0e0;
+    transform: translateX(-2px);
+}
+
+.header-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+    margin: 0;
+}
+
+.date-badge {
+    background: #e8f5f0;
+    color: #2eaf7d;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* ========== PRESENSI CARD ========== */
+.presensi-card {
+    background: white;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.card-title {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+/* ========== SUMMARY STATS ========== */
+.summary-stats {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.stat-box {
+    flex: 1;
+    background: #f8f9fa;
+    padding: 16px;
+    border-radius: 12px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.stat-box:hover {
+    transform: translateY(-2px);
+}
+
+.stat-label {
+    font-size: 12px;
+    color: #888;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.stat-value {
+    font-size: 24px;
+    font-weight: 700;
+    color: #333;
+}
+
+.stat-box.hadir {
+    background: #d1f4e0;
+}
+
+.stat-box.hadir .stat-value {
+    color: #198754;
+}
+
+.stat-box.izin {
+    background: #fff3cd;
+}
+
+.stat-box.izin .stat-value {
+    color: #ffc107;
+}
+
+.stat-box.sakit {
+    background: #f8d7da;
+}
+
+.stat-box.sakit .stat-value {
+    color: #dc3545;
+}
+
+.stat-box.alfa {
+    background: #e2e3e5;
+}
+
+.stat-box.alfa .stat-value {
+    color: #6c757d;
+}
+
+/* ========== TABLE STYLING ========== */
+.table-responsive {
+    overflow-x: auto;
+    margin-bottom: 20px;
+}
+
+.presensi-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.presensi-table thead {
+    background: #f8f9fa;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.presensi-table th {
+    padding: 12px 8px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+    color: #555;
+    border-bottom: 2px solid #dee2e6;
+}
+
+.presensi-table th:first-child {
+    text-align: center;
+    width: 50px;
+}
+
+.presensi-table th:nth-child(2) {
+    text-align: left;
+    padding-left: 16px;
+    min-width: 180px;
+}
+
+.presensi-table tbody tr {
+    border-bottom: 1px solid #f0f0f0;
+    transition: background 0.2s ease;
+}
+
+.presensi-table tbody tr:hover {
+    background: #f8f9fa;
+}
+
+.presensi-table td {
+    padding: 16px 8px;
+    text-align: center;
+}
+
+.presensi-table td:first-child {
+    text-align: center;
+    font-weight: 600;
+    color: #666;
+}
+
+.presensi-table td:nth-child(2) {
+    text-align: left;
+    padding-left: 16px;
+    font-weight: 500;
+    color: #333;
+}
+
+/* ========== RADIO BUTTON STYLING ========== */
+.radio-wrapper {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.radio-wrapper input[type="radio"] {
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.radio-wrapper input[type="radio"]:hover {
+    border-color: #2eaf7d;
+    transform: scale(1.1);
+}
+
+.radio-wrapper input[type="radio"]:checked {
+    border-color: #2eaf7d;
+    background: white;
+}
+
+.radio-wrapper input[type="radio"]:checked::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #2eaf7d;
+}
+
+/* ========== CHECKBOX ALL ========== */
+.checkbox-all {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin: 24px 0;
+    padding: 12px;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.checkbox-all input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    accent-color: #2eaf7d;
+}
+
+.checkbox-all label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+    cursor: pointer;
+    margin: 0;
+}
+
+/* ========== SUBMIT BUTTON ========== */
+.btn-submit {
+    background: #2eaf7d;
+    color: white;
+    border: none;
+    padding: 14px 48px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: block;
+    margin: 24px auto 0;
+    box-shadow: 0 4px 12px rgba(46, 175, 125, 0.3);
+}
+
+.btn-submit:hover {
+    background: #268f68;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(46, 175, 125, 0.4);
+}
+
+.btn-submit:active {
+    transform: translateY(0);
+}
+
+/* ========== DECORATIVE ELEMENTS ========== */
+.decoration {
+    position: absolute;
+    pointer-events: none;
+}
+
+.decoration-left {
+    bottom: -20px;
+    left: -20px;
+    width: 150px;
+    opacity: 0.1;
+}
+
+.decoration-right {
+    bottom: -20px;
+    right: -20px;
+    width: 150px;
+    opacity: 0.1;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 60px;
+    }
+
+    .sidebar:hover {
+        width: 60px;
+    }
+
+    .nav-text {
+        display: none;
+    }
+
+    .main-content {
+        margin-left: 60px;
+        padding: 12px;
+    }
+
+    .presensi-header {
+        padding: 16px;
+    }
+
+    .header-title {
+        font-size: 20px;
+    }
+
+    .date-badge {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+
+    .presensi-table th,
+    .presensi-table td {
+        padding: 12px 4px;
+        font-size: 13px;
+    }
+
+    .summary-stats {
+        flex-wrap: wrap;
+    }
+
+    .stat-box {
+        flex: 1 1 calc(50% - 8px);
+    }
+}
+
+/* ===== Logout Popup ===== */
+.logout-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35);
+    display: flex; /* ⬅️ penting */
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    visibility: hidden; /* ⬅️ ganti cara hide */
+    opacity: 0;
+}
+
+.logout-overlay.show {
+    visibility: visible;
+    opacity: 1;
+}
+
+.logout-modal {
+    background: #fff;
+    padding: 28px 32px;
+    border-radius: 16px;
+    text-align: center;
+    width: 320px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.logout-modal h5 {
+    font-weight: 600;
+    margin-bottom: 24px;
+    line-height: 1.4;
+}
+
+.logout-actions {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+}
+
+.btn-logout {
+    background: linear-gradient(135deg, #ff9f43, #ee5253);
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn-cancel {
+    background: #2ec4b6;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+@media (max-width: 576px) {
+    .sidebar {
+        transform: translateX(-100%);
+    }
+
+    .sidebar.show {
+        transform: translateX(0);
+        width: 200px;
+    }
+
+    .sidebar.show .nav-item {
+        width: 176px;
+        justify-content: flex-start;
+    }
+
+    .sidebar.show .nav-text {
+        opacity: 1;
+    }
+
+    .main-content {
+        margin-left: 0;
+    }
+
+    .presensi-header {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .header-left {
+        width: 100%;
+    }
+
+    .date-badge {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .btn-submit {
+        width: 100%;
+    }
+}

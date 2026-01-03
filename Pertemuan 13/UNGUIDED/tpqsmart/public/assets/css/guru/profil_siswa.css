@@ -1,0 +1,589 @@
+/* ========== PROFIL SISWA PAGE STYLING ========== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #5dbd8f, #83d1a7);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* ========== SIDEBAR ========== */
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 70px;
+    height: 100vh;
+    background: linear-gradient(180deg, #2eaf7d, #83d1a7);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    z-index: 1000;
+    transition: width 0.3s ease;
+}
+
+.sidebar:hover {
+    width: 220px;
+}
+
+.logo-section {
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+    overflow: hidden;
+    padding: 8px;
+}
+
+.sidebar-logo {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.nav-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    padding: 0 12px;
+}
+
+.nav-item {
+    width: 46px;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    font-size: 20px;
+    padding: 0 12px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.sidebar:hover .nav-item {
+    width: 196px;
+    justify-content: flex-start;
+}
+
+.nav-text {
+    font-size: 14px;
+    font-weight: 500;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.sidebar:hover .nav-text {
+    opacity: 1;
+}
+
+.nav-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+.nav-item.active {
+    background: white;
+    color: #2eaf7d;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* ========== MAIN CONTENT ========== */
+.main-content {
+    margin-left: 70px;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* ========== HEADER ========== */
+.profil-header {
+    background: white;
+    border-radius: 16px;
+    padding: 20px 24px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.btn-back {
+    background: #f0f0f0;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-back:hover {
+    background: #e0e0e0;
+    transform: translateX(-2px);
+}
+
+.header-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+    margin: 0;
+}
+
+.total-siswa {
+    background: #e8f5f0;
+    color: #2eaf7d;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* ========== SEARCH BAR ========== */
+.search-container {
+    margin-bottom: 24px;
+}
+
+.search-box {
+    background: white;
+    border-radius: 50px;
+    padding: 12px 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.search-box:focus-within {
+    box-shadow: 0 6px 16px rgba(46, 175, 125, 0.2);
+    transform: translateY(-2px);
+}
+
+.search-box i {
+    color: #888;
+    font-size: 18px;
+}
+
+.search-input {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    color: #333;
+}
+
+.search-input::placeholder {
+    color: #aaa;
+}
+
+.btn-clear {
+    background: transparent;
+    border: none;
+    color: #888;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s ease;
+}
+
+.btn-clear:hover {
+    color: #dc3545;
+}
+
+/* ========== STUDENTS GRID ========== */
+.students-container {
+    margin-bottom: 24px;
+}
+
+.student-card {
+    background: white;
+    border-radius: 16px;
+    padding: 24px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    height: 100%;
+}
+
+.student-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.student-photo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 16px;
+    border: 4px solid #2eaf7d;
+    position: relative;
+}
+
+.student-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.student-photo::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        135deg,
+        rgba(46, 175, 125, 0.2),
+        rgba(131, 209, 167, 0.2)
+    );
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.student-card:hover .student-photo::before {
+    opacity: 1;
+}
+
+.student-name {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 4px;
+}
+
+.student-id {
+    font-size: 13px;
+    color: #888;
+}
+
+/* ========== NO RESULTS ========== */
+.no-results {
+    text-align: center;
+    padding: 60px 20px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.no-results i {
+    font-size: 64px;
+    color: #ccc;
+    margin-bottom: 16px;
+}
+
+.no-results h5 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.no-results p {
+    font-size: 14px;
+    color: #888;
+}
+
+/* ========== MODAL STYLING ========== */
+.modal-content {
+    border-radius: 16px;
+    border: none;
+    overflow: hidden;
+}
+
+.modal-header {
+    background: linear-gradient(135deg, #2eaf7d, #83d1a7);
+    color: white;
+    border-bottom: none;
+    padding: 20px 24px;
+}
+
+.modal-title {
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.modal-header .btn-close {
+    filter: brightness(0) invert(1);
+}
+
+.modal-body {
+    padding: 24px;
+}
+
+.biodata-content {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.biodata-photo {
+    display: flex;
+    justify-content: center;
+}
+
+.biodata-photo img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #2eaf7d;
+}
+
+.biodata-info {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.info-row {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.info-row:last-child {
+    border-bottom: none;
+}
+
+.info-label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #555;
+}
+
+.info-value {
+    font-size: 14px;
+    color: #333;
+}
+
+.modal-footer {
+    border-top: 1px solid #f0f0f0;
+    padding: 16px 24px;
+}
+
+.modal-footer .btn {
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-weight: 600;
+}
+
+.modal-footer .btn-primary {
+    background: #25d366;
+    border: none;
+}
+
+.modal-footer .btn-primary:hover {
+    background: #1ea952;
+}
+
+/* ========== LOADING STATE ========== */
+.loading-skeleton {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 60px;
+    }
+
+    .sidebar:hover {
+        width: 60px;
+    }
+
+    .nav-text {
+        display: none;
+    }
+
+    .main-content {
+        margin-left: 60px;
+        padding: 12px;
+    }
+
+    .profil-header {
+        padding: 16px;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .header-left {
+        width: 100%;
+    }
+
+    .total-siswa {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .header-title {
+        font-size: 20px;
+    }
+
+    .student-photo {
+        width: 80px;
+        height: 80px;
+    }
+
+    .info-row {
+        grid-template-columns: 120px 1fr;
+        gap: 8px;
+    }
+}
+
+@media (max-width: 576px) {
+    .sidebar {
+        transform: translateX(-100%);
+    }
+
+    .sidebar.show {
+        transform: translateX(0);
+        width: 200px;
+    }
+
+    .sidebar.show .nav-item {
+        width: 176px;
+        justify-content: flex-start;
+    }
+
+    .sidebar.show .nav-text {
+        opacity: 1;
+    }
+
+    .main-content {
+        margin-left: 0;
+    }
+
+    .info-row {
+        grid-template-columns: 1fr;
+        gap: 4px;
+    }
+
+    .info-label {
+        font-weight: 700;
+    }
+
+    .info-value::before {
+        content: ": ";
+    }
+}
+
+/* ===== Logout Popup ===== */
+.logout-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35);
+    display: flex; /* ⬅️ penting */
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    visibility: hidden; /* ⬅️ ganti cara hide */
+    opacity: 0;
+}
+
+.logout-overlay.show {
+    visibility: visible;
+    opacity: 1;
+}
+
+.logout-modal {
+    background: #fff;
+    padding: 28px 32px;
+    border-radius: 16px;
+    text-align: center;
+    width: 320px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.logout-modal h5 {
+    font-weight: 600;
+    margin-bottom: 24px;
+    line-height: 1.4;
+}
+
+.logout-actions {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+}
+
+.btn-logout {
+    background: linear-gradient(135deg, #ff9f43, #ee5253);
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn-cancel {
+    background: #2ec4b6;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* ========== PRINT STYLES ========== */
+@media print {
+    .sidebar,
+    .btn-back,
+    .search-container,
+    .modal-footer {
+        display: none !important;
+    }
+
+    .main-content {
+        margin-left: 0;
+    }
+
+    .student-card {
+        break-inside: avoid;
+    }
+}

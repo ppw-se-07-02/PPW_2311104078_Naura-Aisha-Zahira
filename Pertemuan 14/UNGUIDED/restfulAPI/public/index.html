@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Data Mahasiswa</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    body {
+      background-color: #f4f6f8;
+    }
+    .card {
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    }
+  </style>
+</head>
+<body>
+
+<div class="container mt-4">
+  <h2 class="text-center mb-4">📚 Aplikasi Data Mahasiswa</h2>
+
+  <!-- FORM TAMBAH -->
+  <div class="card mb-4">
+    <div class="card-body">
+      <h5 class="mb-3">Tambah Mahasiswa</h5>
+
+      <input id="nama" class="form-control mb-2" placeholder="Nama">
+      <input id="nim" class="form-control mb-2" placeholder="NIM">
+      <input id="jurusan" class="form-control mb-2" placeholder="Jurusan">
+      <input id="email" class="form-control mb-3" placeholder="Email">
+
+      <button class="btn btn-primary w-100" onclick="tambah()">Tambah Data</button>
+    </div>
+  </div>
+
+  <!-- LIST DATA -->
+  <div class="card">
+    <div class="card-body">
+      <h5 class="mb-3">Daftar Mahasiswa</h5>
+      <ul class="list-group" id="list"></ul>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL EDIT -->
+<!-- <div class="modal fade" id="editModal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title">Edit Data Mahasiswa</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <div class="modal-body">
+        <input type="hidden" id="editId">
+
+        <input id="editNama" class="form-control mb-2" placeholder="Nama">
+        <input id="editNim" class="form-control mb-2" placeholder="NIM">
+        <input id="editJurusan" class="form-control mb-2" placeholder="Jurusan">
+        <input id="editEmail" class="form-control mb-2" placeholder="Email">
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+        <button class="btn btn-primary" onclick="updateData()">Simpan Perubahan</button>
+      </div>
+
+    </div>
+  </div>
+</div> -->
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+// let editModal;
+// loadData();
+
+// GET 
+function loadData() {
+  fetch("/api/mahasiswa")
+    .then(res => res.json())
+    .then(data => {
+      const list = document.getElementById("list");
+      list.innerHTML = "";
+
+      data.forEach(m => {
+        list.innerHTML += `
+          <li class="list-group-item">
+            <b>${m.nama}</b><br>
+            NIM: ${m.nim}<br>
+            Jurusan: ${m.jurusan}<br>
+            Email: ${m.email}<br>
+            <button class="btn btn-danger btn-sm mt-2" onclick="hapus(${m.id})">Hapus</button>
+          </li>
+        `;
+      });
+    });
+}
+
+// POST
+function tambah() {
+  fetch("/api/mahasiswa", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      nama: nama.value,
+      nim: nim.value,
+      jurusan: jurusan.value,
+      email: email.value
+    })
+  }).then(() => {
+    document.querySelectorAll("input").forEach(i => i.value = "");
+    loadData();
+  });
+}
+
+// DELETE 
+function hapus(id) {
+  if (confirm("Yakin ingin menghapus data ini?")) {
+    fetch(`/api/mahasiswa/${id}`, { method: "DELETE" })
+      .then(() => loadData());
+  }
+}
+
+// ================= EDIT 
+// function edit(id) {
+//   fetch("/api/mahasiswa")
+//     .then(res => res.json())
+//     .then(data => {
+//       const m = data.find(x => x.id === id);
+
+//       editId.value = m.id;
+//       editNama.value = m.nama;
+//       editNim.value = m.nim;
+//       editJurusan.value = m.jurusan;
+//       editEmail.value = m.email;
+
+//       editModal = new bootstrap.Modal(document.getElementById("editModal"));
+//       editModal.show();
+//     });
+// }
+
+// PUT 
+function updateData() {
+  const id = editId.value;
+
+  fetch(`/api/mahasiswa/${id}`, {
+    method: "PUT",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      nama: editNama.value,
+      nim: editNim.value,
+      jurusan: editJurusan.value,
+      email: editEmail.value
+    })
+  }).then(() => {
+    editModal.hide();
+    loadData();
+  });
+}
+</script>
+
+</body>
+</html>
